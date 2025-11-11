@@ -2,6 +2,8 @@
 
 A custom real estate search platform with client portal system for Victoria BC and Vancouver Island, integrating with VIVA MLS® System IDX data.
 
+**Status:** Ready for deployment
+
 ## Features
 
 ### Public Website
