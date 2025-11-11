@@ -216,7 +216,7 @@ class SavedSearchService {
       const currentHour = now.getHours();
       const currentMinute = now.getMinutes();
       const currentTime = `${currentHour.toString().padStart(2, '0')}:${currentMinute.toString().padStart(2, '0')}`;
-      const currentDay = now.toLocaleDateString('en-US', { weekday: 'lowercase' });
+      const currentDay = now.toLocaleDateString('en-US', { weekday: 'long' }).toLowerCase();
 
       const { data, error } = await supabase
         .from('saved_searches')
