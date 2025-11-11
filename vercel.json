@@ -1,12 +1,1 @@
-{
-  "crons": [
-    {
-      "path": "/api/cron/search-notifications",
-      "schedule": "0 * * * *"
-    },
-    {
-      "path": "/api/cron/check-expiry",
-      "schedule": "0 10 * * *"
-    }
-  ]
-}
+{}
