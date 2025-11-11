@@ -8,10 +8,11 @@ import { savedSearchService } from '@/lib/services/savedSearchService';
  */
 export async function POST(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const searchId = params.id;
+    const { id } = await params;
+    const searchId = id;
 
     const search = await savedSearchService.toggleSavedSearchStatus(searchId);
 

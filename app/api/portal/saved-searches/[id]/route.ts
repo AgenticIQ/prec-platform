@@ -8,11 +8,12 @@ import { savedSearchService } from '@/lib/services/savedSearchService';
  */
 export async function PUT(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const body = await request.json();
-    const searchId = params.id;
+    const { id } = await params;
+    const searchId = id;
 
     const search = await savedSearchService.updateSavedSearch(searchId, body);
 
@@ -42,10 +43,11 @@ export async function PUT(
  */
 export async function DELETE(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const searchId = params.id;
+    const { id } = await params;
+    const searchId = id;
 
     const success = await savedSearchService.deleteSavedSearch(searchId);
 
